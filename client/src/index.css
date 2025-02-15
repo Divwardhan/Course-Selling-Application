@@ -1,0 +1,44 @@
+:root{
+  background-color: rgb(246, 242, 242);
+  /* overflow-y: hidden; */
+}
+/* Disable text selection on the entire page */
+html, body {
+  user-select: none;
+  -webkit-user-select: none;  /* For Safari */
+  -moz-user-select: none;     /* For Firefox */
+  -ms-user-select: none;      /* For Internet Explorer/Edge */
+}
+
+/* Disable selection for all images */
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;  /* Disable image interaction (e.g., no click) */
+}
+/* index.css */
+.page-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform; /* Improves performance */
+}
+
+/* Initial State */
+.page-container.slide-in-left {
+  transform: translateX(100%);
+}
+
+.page-container.slide-in-right {
+  transform: translateX(-100%);
+}
+
+/* Final State */
+.page-container.active {
+  transform: translateX(0);
+}
